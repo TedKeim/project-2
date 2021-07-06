@@ -6,15 +6,25 @@ const morgan = require('morgan');
 const passport = require('passport');
 const moment = require('moment');
 const helmet = require('helmet');
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const db = require('./models');
-
+const mysql = require ("mysql")
+const sequelize = require('./config/connection')
+// const routes = require('/routes');
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+// app.use(routes);
+
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({force:false}).then(()=>{
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});});
+
 
 if (app.get('env') !== 'test') {
   app.use(morgan('dev')); // Hook up the HTTP logger
