@@ -86,6 +86,18 @@ module.exports = (db) => {
       res.redirect('/');
     }
   });
+  //Loads The trivia Game!
+  router.get('/Game1', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('dashboard', user);
+    } else {
+      res.render('dashboard');
+    }
+  });
 
   // Logout
   router.get('/logout', (req, res, next) => {
