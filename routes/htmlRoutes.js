@@ -93,12 +93,35 @@ module.exports = (db) => {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('dashboard', user);
+      res.render('trivia', user);
     } else {
-      res.render('dashboard');
+      res.render('trivia');
     }
   });
-
+  // Loads Game 2
+  router.get('/Game2', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('trivia2', user);
+    } else {
+      res.render('trivia2');
+    }
+  });
+   // Loads Game 3
+   router.get('/Game3', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('trivia3', user);
+    } else {
+      res.render('trivia3');
+    }
+  });
   // Logout
   router.get('/logout', (req, res, next) => {
     req.logout();
