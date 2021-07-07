@@ -6,14 +6,33 @@
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
-        You are logged in as {{user.firstName}}
+        Welcome To Olympic Mini Games: {{user.firstName}}. Click on a game below to start!!
+        <br>
+        <br>
         <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
       {{else}}
         <p>You need to log in to use this app.</p>
       {{/if}}
       <h5 id="login-err-msg"></h5>
     </div>
-  </div>
+  
+  </div>  
+  
 </div>
-
+<div class="jumbotron text-center header-wrap" align="center">
+<li class="nav-item">
+ <a class="nav-link" href="/Game1">Game1</a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="/Game2">Game2</a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="/Game3">Game3</a>
+</li>
+</div>
+{{!-- <div id = "container" class = "container">
+    <div class="jumbotron text-center header-wrap" align="center"></div>
+      <p class = "lead">LeaderBoards!</p>
+      </div>
+</div> --}}
 {{> modal/login-block}}
