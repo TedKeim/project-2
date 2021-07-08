@@ -86,7 +86,54 @@ module.exports = (db) => {
       res.redirect('/');
     }
   });
-
+  //Loads The trivia Game!
+  router.get('/Game1', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('trivia', user);
+    } else {
+      res.render('trivia');
+    }
+  });
+  // Loads Game 2
+  router.get('/Game2', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('trivia2', user);
+    } else {
+      res.render('trivia2');
+    }
+  });
+   // Loads Game 3
+   router.get('/Game3', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('trivia3', user);
+    } else {
+      res.render('trivia3');
+    }
+  });
+  //Leaderboard routes
+  router.get('/LeaderBoard', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('leaderboards', user);
+    } else {
+      res.render('leaderboards');
+    }
+  });
   // Logout
   router.get('/logout', (req, res, next) => {
     req.logout();
