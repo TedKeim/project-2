@@ -110,4 +110,22 @@ html body {
       1000px 100%,
       400px 0;
 
+.game-link{
+  flex-wrap: wrap;
+  font-size: larger;
+  align-content: center;
+  vertical-align: middle;
+  word-spacing: normal;
+  color:rgb(255, 255, 255);
+  margin: -15px;
+}
+.game-link:hover{
+  font-weight: bolder;
+  color:white;
+
+}
+.game{
+  flex-wrap: wrap;
+ 
+  padding: 15px;
 }

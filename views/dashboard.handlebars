@@ -2,37 +2,51 @@
 
 <div id="main-container" class="container">
   <div class="jumbotron text-center header-wrap" align="center">
-    <p class="lead">Welcome to <strong>Sample App</strong></p>
+    <p class="lead">Welcome to <strong>Olympic Minigames! {{user.firstName}} </strong></p>
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
-        Welcome To Olympic Mini Games: {{user.firstName}}. Click on a game below to start!!
-        <br>
-        <br>
-        <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
-      {{else}}
-        <p>You need to log in to use this app.</p>
-      {{/if}}
-      <h5 id="login-err-msg"></h5>
+      <h5>
+      Click on a game below to start!!
+      </h5>
+      <br>
+      <br>
+
     </div>
-  
-  </div>  
-  
-</div>
-<div class="jumbotron text-center header-wrap" align="center">
-<li class="nav-item">
- <a class="nav-link" href="/Game1">Game1</a>
-</li>
-<li class="nav-item">
- <a class="nav-link" href="/Game2">Game2</a>
-</li>
-<li class="nav-item">
- <a class="nav-link" href="/Game3">Game3</a>
-</li>
-</div>
-{{!-- <div id = "container" class = "container">
-    <div class="jumbotron text-center header-wrap" align="center"></div>
-      <p class = "lead">LeaderBoards!</p>
+    <div class="jumbotron text-center header-wrap" align="center">
+      
+    
+      <div class = "game">
+        <a class="game-link" href="/Game1">Game1</a>
+      <div>
+      <img src="project-2\public\assets\img" alt="placeholder">
       </div>
-</div> --}}
+      </div>
+
+
+      <div class = "game">
+        <a class="game-link" href="/Game2">Game2</a>
+      <div>
+      <img src="project-2\public\assets\img" alt="placeholder">
+      </div>
+      </div>
+      
+      
+     
+      <div class = "game">
+        <a class="game-link" href="/Game3">Game3</a>
+      <div>
+      <img src="project-2\public\assets\img" alt="placeholder">
+      </div>
+       </div>
+    
+    </div>
+    {{else}}
+    <p>You need to log in to use this app.</p>
+    {{/if}}
+    <h5 id="login-err-msg"></h5>
+  </div>
+
+</div>
+
 {{> modal/login-block}}
