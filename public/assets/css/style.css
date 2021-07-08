@@ -37,6 +37,7 @@ body {
 }
 
 .container {
+  margin-right: -6%;
   padding-bottom: 2%;
   margin-top: 10%;
   background: rgba(86, 101, 115,.6);
@@ -109,7 +110,7 @@ html body {
       500px 50%,
       1000px 100%,
       400px 0;
-
+  }}
 .game-link{
   flex-wrap: wrap;
   font-size: larger;
