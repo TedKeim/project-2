@@ -9,12 +9,23 @@ const helmet = require('helmet');
 const PORT = process.env.PORT || 3333;
 const app = express();
 const db = require('./models');
-
+const mysql = require ("mysql")
+const sequelize = require('./config/connection')
+// const routes = require('/routes');
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+// app.use(routes);
+
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({force:true}).then(()=>{
+  require("./db/seed")(db)
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});});
+
 
 if (app.get('env') !== 'test') {
   app.use(morgan('dev')); // Hook up the HTTP logger
@@ -50,14 +61,14 @@ if (app.get('env') === 'test') {
   syncOptions.force = true;
 }
 
-db.sequelize.sync(syncOptions).then(() => {
-  if (app.get('env') !== 'test' && syncOptions.force) {
-    require('./db/seed')(db);
-  }
+// db.sequelize.sync(syncOptions).then(() => {
+//   if (app.get('env') !== 'test' && syncOptions.force) {
+//     require('./db/seed')(db);
+//   }
 
-  app.listen(PORT, () => {
-    console.log(`App listening on port: ${PORT}`);
-  });
-});
+//   app.listen(PORT, () => {
+//     console.log(`App listening on port: ${PORT}`);
+//   });
+// });
 
 module.exports = app;
