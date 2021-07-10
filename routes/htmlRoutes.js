@@ -99,15 +99,15 @@ module.exports = (db) => {
     }
   });
   // Loads Game 2
-  router.get('/Game2', (req, res) => {
+  router.get('/hangman', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('trivia2', user);
+      res.render('hangman', user);
     } else {
-      res.render('trivia2');
+      res.render('hangman');
     }
   });
    // Loads Game 3
