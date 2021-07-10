@@ -120,7 +120,6 @@ html body {
 	flex-wrap: wrap;
 	padding: 15px;
 }
-=======
   100% {
     background-position: 
       -5000px 20%,
@@ -128,7 +127,8 @@ html body {
       500px 50%,
       1000px 100%,
       400px 0;
-  }}
+  }
+  
 .game-link{
   flex-wrap: wrap;
   font-size: larger;
