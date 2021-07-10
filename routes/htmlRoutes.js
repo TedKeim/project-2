@@ -105,9 +105,9 @@ module.exports = (db) => {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('Hangman', user);
+      res.render('trivia2', user);
     } else {
-      res.render('Hangman');
+      res.render('trivia2');
     }
   });
    // Loads Game 3
