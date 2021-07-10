@@ -104,7 +104,7 @@ module.exports = (db) => {
 			res.render("trivia");
 		}
 	});
-	// Loads Game 2
+	// Loads Hangman
 	router.get("/hangman", (req, res) => {
 		if (req.isAuthenticated()) {
 			const user = {
