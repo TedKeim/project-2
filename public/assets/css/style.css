@@ -1,131 +1,121 @@
 body {
-  color: white;
-  background-size: cover;
-  height:100%
-  
+	color: white;
+	background-size: cover;
+	height: 100%;
 }
 
 .jumbotron {
-  background: rgba(0,0,0,0);
+	background: rgba(0, 0, 0, 0.5);
+	text-align: center;
 }
 
 .modal {
-  color: black;
+	color: black;
 }
 
 .btn {
-  color:white;
-  background:#cadde1;
-  border: 1px solid white;
+	color: white;
+	background: #cadde1;
+	border: 1px solid white;
 }
 
-#user-form, .header-wrap, #create-form, .create-user-wrap {
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px 0;
+#user-form,
+.header-wrap,
+#create-form,
+.create-user-wrap {
+	padding: 20px;
+	border-radius: 15px;
+	margin: 20px 0;
 }
 
 #update-err-msg,
 #login-err-msg,
 #create-err-msg {
-  color: red !important;
+	color: red !important;
 }
 
 #go-home {
- width: auto;
- height: 65px;
+	width: auto;
+	height: 65px;
 }
 
 .container {
-  padding-bottom: 2%;
-  margin-top: 10%;
-  background: rgba(86, 101, 115,.6);
-  height:100%;
-  border-radius: .25rem;
-  margin-bottom: 2%;
-  width: 600px;
+	display: grid;
+	justify-items: auto;
+	margin-top: 8%;
+	background: rgba(86, 101, 115, 0.6);
+	height: 100%;
+	width: 100%;
+	padding-bottom: 2%;
+	border-radius: 0.25rem;
+	margin-bottom: 2%;
 }
 
 [data-useremail="true"] {
-  color: white !important;
+	color: white !important;
 }
 [data-register="true"] {
-  color: white !important;
+	color: white !important;
 }
 
 .lead {
-  font-size: 1.8rem;
-  font-weight: 500;
+	font-size: 1.8rem;
+	font-weight: 500;
 }
 
-.userId h2, .header-wrap h1 {
-  text-transform: capitalize;
+.userId h2,
+.header-wrap h1 {
+	text-transform: capitalize;
 }
 
 hr {
-  background-color: #fff !important;
+	background-color: #fff !important;
 }
 
 .list-group-item {
-  line-height: 2.5;
+	line-height: 2.5;
 }
 
 .card-body {
-  color: #444;
+	color: #444;
 }
 
 html body {
-  height: 100%;
-  /* max-height: 600px; */
-  width: 1000px;
-  background-color: hsla(200,40%,30%,.4);
-  background-image:   
-  url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
-  url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
-  url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
-  url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
-  url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-  background-repeat: repeat-x;
-  background-position: 
-    0 20%,
-    0 100%,
-    0 50%,
-    0 100%,
-    0 0;
-  background-size: 
-    2500px,
-    800px,
-    500px 200px,
-    1000px,
-    400px 260px;
-  animation: 50s para infinite linear;
-  }
+	height: 100%;
+	/* max-height: 600px; */
+	/* width: 100%; */
+	background-color: hsla(200, 40%, 30%, 0.4);
+	background-image: url("https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png"),
+		url("https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png"),
+		url("https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png"),
+		url("https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png"),
+		url("https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png");
+	background-repeat: repeat-x;
+	background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+	background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+	animation: 50s para infinite linear;
+}
 
 @keyframes para {
-  100% {
-    background-position: 
-      -5000px 20%,
-      -800px 95%,
-      500px 50%,
-      1000px 100%,
-      400px 0;
-
-.game-link{
-  flex-wrap: wrap;
-  font-size: larger;
-  align-content: center;
-  vertical-align: middle;
-  word-spacing: normal;
-  color:rgb(255, 255, 255);
-  margin: -15px;
+	100% {
+		background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
+			400px 0;
+	}
 }
-.game-link:hover{
-  font-weight: bolder;
-  color:white;
-
+.game-link {
+	flex-wrap: wrap;
+	font-size: larger;
+	align-content: center;
+	vertical-align: middle;
+	word-spacing: normal;
+	color: rgb(255, 255, 255);
+	margin: -15px;
 }
-.game{
-  flex-wrap: wrap;
- 
-  padding: 15px;
+.game-link:hover {
+	font-weight: bolder;
+	color: white;
+}
+.game {
+	flex-wrap: wrap;
+	padding: 15px;
 }
