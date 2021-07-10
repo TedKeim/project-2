@@ -134,6 +134,17 @@ module.exports = (db) => {
       res.render('leaderboards');
     }
   });
+  router.get('/Trivia', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('triviaGame', user);
+    } else {
+      res.render('triviaGame');
+    }
+  });
   // Logout
   router.get('/logout', (req, res, next) => {
     req.logout();
