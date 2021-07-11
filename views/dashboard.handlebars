@@ -1,5 +1,3 @@
-
-
 <div id="main-container" class="container container-fluid">
   <div class="jumbotron header-wrap">
     <p class="lead"><strong>Welcome to Olympic Minigames {{user.firstName}}!</strong></p>
@@ -7,34 +5,30 @@
     <div>
 
       {{#if isloggedin}}
-      <h5>Click on a game below to start!!</h5>
+      <h5 class="h5">Click on a game below to start!!</h5>
     </div>
 
     <div class="jumbotron header-wrap">
-      
       <div class = "game">
-        <a class="game-link" href="/game1">Game1</a>
+        <a class="game-link" href="/game1">Olympics Trivia</a>
           <div>
-            <img src="/assets/img/placeholder.png" alt="placeholder">
+            <img src="/assets/images/Olympics Symbol.jpg" width="200" alt="placeholder">
           </div>
       </div>
 
-
       <div class = "game">
-        <a class="game-link" href="/game2">Game2</a>
+        <a class="game-link" href="/game2">Hangman</a>
           <div>
-            <img src="/assets/img/placeholder.png" alt="placeholder">
+            <img src="/assets/images/olympics_torch_img.jpeg" width="200" alt="placeholder">
           </div>
       </div>
      
-
       <div class = "game">
         <a class="game-link" href="/game3">Game3</a>
           <div>
-            <img src="/assets/img/placeholder.png" alt="placeholder">
+            <img src="/assets/images/gold_medal_img.jpeg" width="150" alt="placeholder">
           </div>
       </div>
-    
     </div>
 
     {{else}}
@@ -43,7 +37,6 @@
 
     <h5 id="login-err-msg"></h5>
   </div>
-
 </div>
 
 {{> modal/login-block}}

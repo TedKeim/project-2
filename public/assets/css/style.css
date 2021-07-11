@@ -244,3 +244,28 @@ choice-container {
     transform: rotate(360deg);
   }
 }
+
+.game-link {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+}
+
+.h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+}
+
+.lead {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.navbar-dark
+.navbar-brand {
+  font-size: 39px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222,223,224));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
