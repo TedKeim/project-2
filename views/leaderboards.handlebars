@@ -1,22 +1,26 @@
 
 
 <div id="main-container" class="container">
-  <div class="jumbotron text-center header-wrap">
-    <p class="lead"><strong>MiniGame Leaderboards </strong></p>
-    <table>
-      <tr>
-        <td id="rank">Rank</td>
-        <td id="user">User</td>
-        <td id="score">Score</td>
-      </tr>
-    </table>
+
+  <div class="jumbotron header-wrap">
+    <p class="lead" id= "finalScore"><strong>MiniGame Leaderboards</strong></p>
+        <div id="highScores" class="flex-center flex-column"> 
+            <ul id="highScoresList"></ul>
+            <div class="row">
+              <div class="column">Game 1</div>
+              <div class="column">Game 2</div>
+              <div class="column">Game 3</div>
+            </div>
+        </div>
+    </div>
+
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
      
 
     </div>
-    <div class="jumbotron text-center header-wrap" align="center">
+    <div class="jumbotron header-wrap">
       
     
    
