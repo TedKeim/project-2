@@ -49,7 +49,6 @@ body {
 	padding-bottom: 2%;
 	border-radius: 0.25rem;
 	margin-bottom: 2%;
-
 }
 
 [data-useremail="true"] {
@@ -118,35 +117,8 @@ html body {
 }
 .game {
 	flex-wrap: wrap;
-	padding: 15px;
-}
-  100% {
-    background-position: 
-      -5000px 20%,
-      -800px 95%,
-      500px 50%,
-      1000px 100%,
-      400px 0;
-  }
-  
-.game-link{
-  flex-wrap: wrap;
-  font-size: larger;
-  align-content: center;
-  vertical-align: middle;
-  word-spacing: normal;
-  color:rgb(255, 255, 255);
-  margin: -15px;
-}
-.game-link:hover{
-  font-weight: bolder;
-  color:white;
 
-}
-.game{
-  flex-wrap: wrap;
- 
-  padding: 15px;
+	padding: 15px;
 }
 
 .column {
@@ -163,84 +135,84 @@ html body {
 /*/added for trivia game/*/
 
 choice-container {
-  display: flex;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  font-size: 1.8rem;
-  border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color: white;
+	display: flex;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	font-size: 1.8rem;
+	border: 0.1rem solid rgb(86, 165, 235, 0.25);
+	background-color: white;
 }
 
 .choice-container:hover {
-  cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
+	cursor: pointer;
+	box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+	transform: translateY(-0.1rem);
+	transition: transform 150ms;
 }
 
 .choice-prefix {
-  padding: 1.5rem 2.5rem;
-  background-color: #56a5eb;
-  color: white;
+	padding: 1.5rem 2.5rem;
+	background-color: #56a5eb;
+	color: white;
 }
 
 .choice-text {
-  padding: 1.5rem;
-  width: 100%;
+	padding: 1.5rem;
+	width: 100%;
 }
 
 .correct {
-  background-color: #28a745;
+	background-color: #28a745;
 }
 
 .incorrect {
-  background-color: #dc3545;
+	background-color: #dc3545;
 }
 
 /* HUD */
 
 #hud {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .hud-prefix {
-  text-align: center;
-  font-size: 2rem;
+	text-align: center;
+	font-size: 2rem;
 }
 
 .hud-main-text {
-  text-align: center;
+	text-align: center;
 }
 
 #progressBar {
-  width: 20rem;
-  height: 4rem;
-  border: 0.3rem solid #56a5eb;
-  margin-top: 1.5rem;
+	width: 20rem;
+	height: 4rem;
+	border: 0.3rem solid #56a5eb;
+	margin-top: 1.5rem;
 }
 
 #progressBarFull {
-  height: 3.4rem;
-  background-color: #56a5eb;
-  width: 0%;
+	height: 3.4rem;
+	background-color: #56a5eb;
+	width: 0%;
 }
 
 /* LOADER */
 #loader {
-  border: 1.6rem solid white;
-  border-radius: 50%;
-  border-top: 1.6rem solid #56a5eb;
-  width: 12rem;
-  height: 12rem;
-  animation: spin 2s linear infinite;
+	border: 1.6rem solid white;
+	border-radius: 50%;
+	border-top: 1.6rem solid #56a5eb;
+	width: 12rem;
+	height: 12rem;
+	animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
