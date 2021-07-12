@@ -1,52 +1,56 @@
-{{> nav/nav-block}}
-
-<div id="main-container" class="container">
-  <div class="jumbotron text-center header-wrap" align="center">
-    <p class="lead">Welcome to <strong>Olympic Minigames! {{user.firstName}} </strong></p>
+<div id="main-container" class="container container-fluid">
+  <div class="jumbotron header-wrap">
+    <p class="lead"><strong>Welcome to Olympic Minigames {{user.firstName}}!</strong></p>
     <hr class="my-4">
     <div>
-      {{#if isloggedin}}
-      <h5>
-      Click on a game below to start!!
-      </h5>
-      <br>
-      <br>
 
+      {{#if isloggedin}}
+      <h5 class="h5">Click on a game below to start!!</h5>
     </div>
-    <div class="jumbotron text-center header-wrap" align="center">
-      
-    
+
+    <div class="jumbotron header-wrap">
       <div class = "game">
+<<<<<<< HEAD
         <a class="game-link" href="/Game1">Sports Trivia</a>
       <div>
       <img src="project-2\public\assets\img" alt="placeholder">
       </div>
+=======
+        <a class="game-link" href="/Trivia">Olympics Trivia</a>
+          <div>
+            <img src="/assets/images/Olympics Symbol.jpg" width="200" alt="placeholder">
+          </div>
+>>>>>>> b113697ac1660a0d904893cce0d0d952ba06bbcb
       </div>
 
-
       <div class = "game">
+<<<<<<< HEAD
         <a class="game-link" href="/hangman">Olympic Hangman</a>
       <div>
       <img src="project-2\public\assets\img" alt="placeholder">
       </div>
+=======
+        <a class="game-link" href="/hangman">Hangman</a>
+          <div>
+            <img src="/assets/images/olympics_torch_img.jpeg" width="200" alt="placeholder">
+          </div>
+>>>>>>> b113697ac1660a0d904893cce0d0d952ba06bbcb
       </div>
-      
-      
      
       <div class = "game">
-        <a class="game-link" href="/Game3">Game3</a>
-      <div>
-      <img src="project-2\public\assets\img" alt="placeholder">
+        <a class="game-link" href="/game3">Game3</a>
+          <div>
+            <img src="/assets/images/gold_medal_img.jpeg" width="150" alt="placeholder">
+          </div>
       </div>
-       </div>
-    
     </div>
+
     {{else}}
     <p>You need to log in to use this app.</p>
     {{/if}}
+
     <h5 id="login-err-msg"></h5>
   </div>
-
 </div>
 
 {{> modal/login-block}}

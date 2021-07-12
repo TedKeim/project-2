@@ -1,3 +1,4 @@
+
 var guessInput = document.getElementById("guessInput")
 var strikes = 0
 var Olympic_games = [
@@ -7,9 +8,12 @@ var Olympic_games = [
     'Weight Lifting',
     'Javelin Throw'
 ]
-
-let wrong =document.querySelector("#wrong")
+let initialScore = 0;
+let Score = document.getElementById("score")
+let wrong = document.querySelector("#wrong")
 var originalMessage = wrong.innerHTML
+let win = document.querySelector("#win")
+var winningMessage =win.innerHTML
 
 var sampleFromDB = [
     {
@@ -38,6 +42,8 @@ function manageGuess() {
             if (guessInput.value.toLowerCase() == randomGameChoice[j].toLowerCase()) {
                 result = result.substring(0, j) + randomGameChoice[j] + result.substring(j+1)
                 console.log("there's a match", result)
+                initialScore +=20
+                Score.innerHTML = initialScore
             }
         }
         checkIfWon()
@@ -60,7 +66,15 @@ function checkIfWon() {
     if(result.includes("*")){
         //game is not over
     }else {
-        alert("congrats!")
+        win.innerHTML +="Way to Go, you win! Check your final score below!"
+
+        initialScore += 100;
+        Score.innerHTML = initialScore
+
+
+
+
+
     }
 }
 

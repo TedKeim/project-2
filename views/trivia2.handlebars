@@ -1,24 +1,21 @@
 {{> nav/nav-block}}
-<link rel="stylesheet" href="/public/assets/css/style.css">
 
 <div id="main-container" class="container">
   <div class="jumbotron text-center header-wrap" align="center">
-    <p class="lead"><strong>Olympic Trivia Minigame! </strong></p>
+    <p class="lead"><strong>Olympic minigame 2 </strong></p>
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
       <h5>
       Click on start below to begin!!
       </h5>
-        <div>
-        <a href="/Trivia">Start</a>
+      <div>
+        <button>Start</button>
       </div>
       <br>
       <br>
 
     </div>
-
-
     <div class="jumbotron text-center header-wrap" align="center">
       
     
@@ -28,7 +25,7 @@
     {{/if}}
     <h5 id="login-err-msg"></h5>
   </div>
-{{!-- 
-</div> --}}
+
+</div>
 
 {{> modal/login-block}}
