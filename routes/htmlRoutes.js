@@ -92,16 +92,16 @@ module.exports = (db) => {
     }
   });
 
-  // Loads The trivia Game!
-  router.get('/trivia', (req, res) => {
+  //Loads The trivia Game!
+  router.get('/Trivia', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('trivia', user);
+      res.render('Trivia', user);
     } else {
-      res.render('trivia');
+      res.render('Trivia');
     }
   });
   // Loads Hangman
@@ -128,7 +128,7 @@ module.exports = (db) => {
       res.render('trivia3');
     }
   });
-  // Leaderboard routes
+  //Leaderboard routes
   router.get('/LeaderBoard', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
