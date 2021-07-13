@@ -1,45 +1,49 @@
 body {
-	color: white;
-	background-size: cover;
-	height: 100%;
+  color: white;
+  background-size: cover;
+  height: 100%;
+}
+.card-header {
+  color: black;
 }
 
 .jumbotron {
-	background: rgba(0, 0, 0, 0.5);
-	text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .modal {
-	color: black;
+  color: black;
 }
 
 .btn {
-	color: white;
-	background: #cadde1;
-	border: 1px solid white;
+  color: white;
+  background: #cadde1;
+  border: 1px solid white;
 }
 
 #user-form,
 .header-wrap,
 #create-form,
 .create-user-wrap {
-	padding: 20px;
-	border-radius: 15px;
-	margin: 20px 0;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
 }
 
 #update-err-msg,
 #login-err-msg,
 #create-err-msg {
-	color: red !important;
+  color: red !important;
 }
 
 #go-home {
-	width: auto;
-	height: 65px;
+  width: auto;
+  height: 65px;
 }
 
 .container {
+
 	display: grid;
 	justify-items: auto;
 	margin-top: 8%;
@@ -51,35 +55,36 @@ body {
 	margin-bottom: 2%;
 	position: relative;
 	left: 220px;
+
 }
 
-[data-useremail="true"] {
-	color: white !important;
+[data-useremail='true'] {
+  color: white !important;
 }
-[data-register="true"] {
-	color: white !important;
+[data-register='true'] {
+  color: white !important;
 }
 
 .lead {
-	font-size: 1.8rem;
-	font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .userId h2,
 .header-wrap h1 {
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 hr {
-	background-color: #fff !important;
+  background-color: #fff !important;
 }
 
 .list-group-item {
-	line-height: 2.5;
+  line-height: 2.5;
 }
 
 .card-body {
-	color: #444;
+  color: #444;
 }
 
 html body {
@@ -87,13 +92,12 @@ html body {
   /* max-height: 600px; */
   width: 1000px;
   background-color: rgba(0, 0, 0, 0.4);
-  background-image:   
-  url('https://images.mentor.se/wp-content/uploads/sites/5/2019/02/28135709/youth-png-12.png'), 
-  url('https://images-na.ssl-images-amazon.com/images/I/61gCK6ClC7L._AC_SL1468_.jpg'),
-  url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
-  
-  url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+  background-image: url('https://images.mentor.se/wp-content/uploads/sites/5/2019/02/28135709/youth-png-12.png'),
+    url('https://images-na.ssl-images-amazon.com/images/I/61gCK6ClC7L._AC_SL1468_.jpg'),
+    url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
   background-repeat: repeat-x;
+
   background-position: 
     0 100%,
     0 100%,
@@ -106,43 +110,40 @@ html body {
     500px 200px,
     1000px,
     400px 260px; */
+
   animation: 400s para infinite linear;
-  }
+}
 
 @keyframes para {
   100% {
-    background-position: 
-      -5000px 20%,
-      -800px 95%,
-      500px 50%,
-      1000px 100%,
+    background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
       400px 0;
-    }
   }
+}
 
 @keyframes para {
-	100% {
-		background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
-			400px 0;
-	}
+  100% {
+    background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
+      400px 0;
+  }
 }
 .game-link {
-	flex-wrap: wrap;
-	font-size: larger;
-	align-content: center;
-	vertical-align: middle;
-	word-spacing: normal;
-	color: rgb(255, 255, 255);
-	margin: -15px;
+  flex-wrap: wrap;
+  font-size: larger;
+  align-content: center;
+  vertical-align: middle;
+  word-spacing: normal;
+  color: rgb(255, 255, 255);
+  margin: -15px;
 }
 .game-link:hover {
-	font-weight: bolder;
-	color: white;
+  font-weight: bolder;
+  color: white;
 }
 .game {
-	flex-wrap: wrap;
+  flex-wrap: wrap;
 
-	padding: 15px;
+  padding: 15px;
 }
 
 .column {
@@ -151,16 +152,15 @@ html body {
 }
 
 .row:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
 
-.navbar-dark
-.navbar-brand {
+.navbar-dark .navbar-brand {
   font-size: 35px;
   font-weight: bold;
-  background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222,223,224));
+  background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222, 223, 224));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
