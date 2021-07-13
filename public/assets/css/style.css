@@ -153,3 +153,12 @@ html body {
   display: table;
   clear: both;
 }
+
+.navbar-dark
+.navbar-brand {
+  font-size: 35px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222,223,224));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
