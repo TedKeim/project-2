@@ -20,7 +20,7 @@ module.exports = (passport, db) => {
 
   // Hangman App
   router.get('/hangman', AppController.getExamples);
-  router.post('/hangman', AppController.createExample);
+  router.post('/hangman', AppController.createHangmanScore);
   router.delete('/hangman/:id', AppController.deleteExample);
 
   // App

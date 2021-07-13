@@ -2,7 +2,9 @@ module.exports = function (db) {
   return {
     // Get all examples
     getExamples: function (req, res) {
-      db.Example.findAll({ where: { UserId: req.session.passport.user.id } }).then(function (dbExamples) {
+      db.Example.findAll({
+        where: { UserId: req.session.passport.user.id }
+      }).then(function (dbExamples) {
         res.json(dbExamples);
       });
     },
@@ -14,8 +16,16 @@ module.exports = function (db) {
     },
     // Delete an example by id
     deleteExample: function (req, res) {
-      db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
+      db.Example.destroy({ where: { id: req.params.id } }).then(function (
+        dbExample
+      ) {
         res.json(dbExample);
+      });
+    },
+    // Create a new Hangman score
+    createHangmanScore: function (req, res) {
+      db.Leaderboard.create(req.body).then(function (dbLeaderboard) {
+        res.json(dbLeaderboard);
       });
     }
   };
