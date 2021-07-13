@@ -1,3 +1,5 @@
+var newGamebutton = document.createElement("button");
+newGamebutton.innerHTML = "Start New Game";
 
 var guessInput = document.getElementById("guessInput")
 var strikes = 0
@@ -12,7 +14,8 @@ let initialScore = 0;
 let Score = document.getElementById("score")
 let wrong = document.querySelector("#wrong")
 var originalMessage = wrong.innerHTML
-let win = document.querySelector("#win")
+let win = document.querySelector("#win");
+body.appendChild(newGamebutton);
 var winningMessage =win.innerHTML
 
 var sampleFromDB = [
@@ -42,7 +45,7 @@ function manageGuess() {
             if (guessInput.value.toLowerCase() == randomGameChoice[j].toLowerCase()) {
                 result = result.substring(0, j) + randomGameChoice[j] + result.substring(j+1)
                 console.log("there's a match", result)
-                initialScore +=20
+                initialScore +=10
                 Score.innerHTML = initialScore
             }
         }
@@ -68,7 +71,7 @@ function checkIfWon() {
     }else {
         win.innerHTML +="Way to Go, you win! Check your final score below!"
 
-        initialScore += 100;
+        initialScore += 20;
         Score.innerHTML = initialScore
 
 
