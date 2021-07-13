@@ -49,6 +49,8 @@ body {
 	padding-bottom: 2%;
 	border-radius: 0.25rem;
 	margin-bottom: 2%;
+	position: relative;
+	left: 220px;
 }
 
 [data-useremail="true"] {
@@ -98,12 +100,12 @@ html body {
     0 100%,
     0 100%,
     0 100;
-  background-size: 
+  /* background-size: 
     2500px,
     800px,
     500px 200px,
     1000px,
-    400px 260px;
+    400px 260px; */
   animation: 400s para infinite linear;
   }
 
