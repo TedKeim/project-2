@@ -1,49 +1,16 @@
 document.addEventListener("keydown", typing, false);
 var temp = document.querySelector('.time');
- 	var button = document.querySelector("button");
+ 	var button = document.querySelector("#startbtn");
+     console.log('button ', button)
  	var words = document.querySelector(".words");
  	var timerDiv = document.querySelector(".time");
  	var scoreDiv = document.querySelector(".score");
  	var points = 0;
- 	var spans;
+ 	var spans= [];
  	var typed;
  	var seconds = 60;
-  
-
- 	function countdown() {
- 		points = 0;
- 		var timer = setInterval(function(){
- 			button.disabled = true;
-    		seconds--;
-    		temp.innerHTML = seconds;
-    		if (seconds === 0) {
-    			alert("Game over! Your score is " + points);
-    			scoreDiv.innerHTML = "0";
-    			words.innerHTML = "";
-    			button.disabled = false;
-    			clearInterval(timer);
-    			seconds = 60;
-    			timerDiv.innerHTML = "60";
-    			button.disabled = false;	
-    		}
- 		}, 1000);
-  	}
-
-  	function random() {
-  		words.innerHTML = "";
-  		var random = Math.floor(Math.random() * (1943 - 0 + 1)) + 0;
-  		var wordArray = list[random].split("");
-  		for (var i = 0; i < wordArray.length; i++) { 
-  			var span = document.createElement("span");
-  			span.classList.add("span");
-  			span.innerHTML = wordArray[i];
-  			words.appendChild(span);
-  		}
-  		spans = document.querySelectorAll(".span");
-  	}
-
-
-  	const list = ['ACCOUNT','ACCURATE','ACRES','ACROSS','ACT','ACTION','ACTIVE','ACTIVITY',
+ 
+     const list = ['ACCOUNT','ACCURATE','ACRES','ACROSS','ACT','ACTION','ACTIVE','ACTIVITY',
   'ACTUAL','ACTUALLY','ADD','ADDITION','ADDITIONAL','ADJECTIVE','ADULT','ADVENTURE',
   'ADVICE','AFFECT','AFRAID','AFTER','AFTERNOON','AGAIN','AGAINST','AGE',
   'AGO','AGREE','AHEAD','AID','AIR','AIRPLANE','ALIKE','ALIVE',
@@ -287,8 +254,43 @@ var temp = document.querySelector('.time');
   'YEAR','YELLOW','YES','YESTERDAY','YET','YOU','YOUNG','YOUNGER',
   'YOUR','YOURSELF','YOUTH','ZERO','ZOO'];
 
+ 	function countdown() {
+ 		points = 0;
+ 		var timer = setInterval(function(){
+ 			button.disabled = true;
+    		seconds--;
+    		temp.innerHTML = seconds;
+    		if (seconds === 0) {
+    			alert("Game over! Your score is " + points);
+    			scoreDiv.innerHTML = "0";
+    			words.innerHTML = "";
+    			button.disabled = false;
+    			clearInterval(timer);
+    			seconds = 60;
+    			timerDiv.innerHTML = "60";
+    			button.disabled = false;	
+    		}
+ 		}, 1000);
+  	}
+
+  	function random() {
+  		words.innerHTML = "";
+  		var random = Math.floor(Math.random() * (1943 - 0 + 1)) + 0;
+  		var wordArray = list[random].split("");
+  		for (var i = 0; i < wordArray.length; i++) { 
+  			var span = document.createElement("span");
+  			span.classList.add("span");
+  			span.innerHTML = wordArray[i];
+  			words.appendChild(span);
+  		}
+  		spans = document.querySelectorAll(".span");
+  	}
+
+
+  	
+
   	button.addEventListener("click", function(e){
-        
+        console.log('CLICKED BUTTON')
   		countdown();
   		random();
   		button.disabled = true;	

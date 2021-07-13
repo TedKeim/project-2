@@ -124,10 +124,10 @@ module.exports = (db) => {
         isloggedin: req.isAuthenticated()
       };
     
-      res.render('wordtype', user);
+      res.render('./wordtype', user);
       
     } else {
-      res.render('wordtype');
+      res.render('./wordtype');
     }
   });
  

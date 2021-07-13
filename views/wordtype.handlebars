@@ -1,14 +1,14 @@
 {{> nav/nav-block}}
 
-<div class="justify-center flex-column hidden"></div>
+
 <div id="main-container" class="container container-fluid">
   <div class="jumbotron header-wrap">
     <p class="lead"><strong>word </strong></p>
     <hr class="my-4">
     
-
+ <link rel="stylesheet" href="./public/assets/css/wordtype.css">
       {{#if isloggedin}}
-    <link rel="stylesheet" href="./public/assets/css/wordtype.css">
+    
 	<div class="wrapper">
 		<h1></h1>
 		<p>Type as many words as you can until time runs out!</p>
@@ -27,12 +27,12 @@
 			<p class="words"></p>
 		</div>
 	</div>
-</body>
+
  </div>
  </div>
 
   <script src="/assets/js/wordtype.js"></script>
- 
+
     {{else}}
     <p>You need to log in to use this app.</p>
     {{/if}}
