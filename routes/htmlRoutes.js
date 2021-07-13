@@ -108,7 +108,7 @@ module.exports = (db) => {
   router.get('/hangman', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
-        user: req.session.passport.user,
+        userInfo: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
       res.render('hangman', user);
