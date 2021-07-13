@@ -1,0 +1,48 @@
+{{> nav/nav-block}}
+<div class="justify-center flex-column hidden"></div>
+<div id="main-container" class="container container-fluid">
+  <div class="jumbotron header-wrap">
+    <p class="lead"><strong>word </strong></p>
+    <hr class="my-4">
+    
+
+      {{#if isloggedin}}
+      
+    
+    
+
+ 
+
+	<div class="wrapper">
+		<h1></h1>
+		<p>Type as many words as you can until time runs out!</p>
+		<button id = "startbtn">START</button>
+		<div class="outerWrap">
+			<div class="scoreWrap">
+				<p>Score</p>
+				<span class="score">0</span>
+			</div>
+			<div class="timeWrap">
+				<p>Time left</p>
+				<span class="time">60</span>
+			</div>
+		</div>
+		<div class="wordsWrap">
+			<p class="words"></p>
+		</div>
+	</div>
+</body>
+ </div>
+ </div>
+
+  <script src="/assets/js/wordtype.js"></script>
+  {{!-- <link rel="stylesheet" href="public\assets\css\wordtype.css" type="text/css"/> --}}
+    {{else}}
+    <p>You need to log in to use this app.</p>
+    {{/if}}
+    <h5 id="login-err-msg"></h5>
+  </div>
+
+</div>
+
+{{> modal/login-block}}

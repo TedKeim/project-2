@@ -23,6 +23,11 @@ module.exports = (passport, db) => {
   router.post('/hangman', AppController.createHangmanScore);
   router.delete('/hangman/:id', AppController.deleteExample);
 
+  //Typing word app
+  router.get('/wordtype', AppController.getExamples);
+  router.post('/wordtype', AppController.createExample);
+  router.delete('/wordtype/:id', AppController.deleteExample);
+
   // App
   router.get('/examples', AppController.getExamples);
   router.post('/examples', AppController.createExample);

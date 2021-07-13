@@ -117,15 +117,15 @@ module.exports = (db) => {
     }
   });
   // Loads Game 3
-  router.get('/Game3', (req, res) => {
+  router.get('/wordtype', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('trivia3', user);
+      res.render('wordtype', user);
     } else {
-      res.render('trivia3');
+      res.render('wordtype');
     }
   });
   // Leaderboard routes
