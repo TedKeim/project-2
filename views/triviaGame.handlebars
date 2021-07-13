@@ -1,8 +1,12 @@
-<link rel="stylesheet" href="/public/assets/css/trivia.css">
+{{> nav/nav-block}}
 
-<div id="main-container" class="container">
+<div id="main-container" class="container container-fluid">
+  <div class="jumbotron header-wrap">
+    <p class="lead"><strong>Olympics Trivia</strong></p><hr class="my-4">
+    <div>
+      {{#if isloggedin}}
+      <link rel="stylesheet" href="/assets/css/trivia.css">
 
-     
       <div id="game" class="justify-center flex-column hidden">
         <div id="hud">
           <div id="hud-item">
@@ -40,21 +44,6 @@
     </div>
 
     <script src="/routes/triviaRoutes.js"></script>
-    
-    
-        
-    
-
-    <hr class="my-4">
-    <div>
-      {{#if isloggedin}}
-     
-
-    </div>
-    <div class="jumbotron header-wrap">
-      
-    
-   
     {{else}}
     <p>You need to log in to use this app.</p>
     {{/if}}

@@ -14,9 +14,9 @@ module.exports = (passport, db) => {
   router.post('/user/confirm', AuthController.confirmAuth);
 
   // Trivia App
-  router.get('/trivia', AppController.getExamples);
-  router.post('/trivia', AppController.createExample);
-  router.delete('/trivia/:id', AppController.deleteExample);
+  router.get('/triviaGame', AppController.getExamples);
+  router.post('/triviaGame', AppController.createExample);
+  router.delete('/triviaGame/:id', AppController.deleteExample);
 
   // Hangman App
   router.get('/hangman', AppController.getExamples);

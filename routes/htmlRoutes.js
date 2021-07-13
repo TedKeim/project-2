@@ -93,7 +93,7 @@ module.exports = (db) => {
   });
 
   //Loads The trivia Game!
-  router.get('/Trivia', (req, res) => {
+  router.get('/triviaGame', (req, res) => {
     if (req.isAuthenticated()) {
       const user = {
         user: req.session.passport.user,
