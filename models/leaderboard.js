@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    userId: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
     game: DataTypes.STRING,
     score: DataTypes.INTEGER
   });

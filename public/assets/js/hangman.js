@@ -79,16 +79,34 @@ function checkIfWon() {
 
     initialScore += 100;
     score.innerHTML = initialScore;
-    console.log('userId: ', window.userId);
-    console.log('Score: ', score.innerHTML);
-    fetch('/api/hangman', {
-      method: 'POST',
-      body: {
-        userId: window.userId,
-        game: 'hangman',
-        score: score.innerHTML
-      }
+
+    const userId = document.getElementById('user').dataset.id;
+    console.log('userId: ', userId);
+
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+    myHeaders.append(
+      'Cookie',
+      'connect.sid=s%3AxZCfJ4AKPxQp_-jBZvhQ7WrHZ9prnHBa.0lGg8Y%2BKvMQWlkwwHE0xEigxKDMjoq1rJj9XpUikp5s'
+    );
+
+    const raw = JSON.stringify({
+      userId: userId,
+      game: 'hangman',
+      score: parseInt(score.innerHTML)
     });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch('/api/hangman', requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log('error', error));
   }
 }
 

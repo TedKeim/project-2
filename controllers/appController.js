@@ -24,7 +24,10 @@ module.exports = function (db) {
     },
     // Create a new Hangman score
     createHangmanScore: function (req, res) {
+      console.log('HEEEEERRRRREE!!!!!!');
       db.Leaderboard.create(req.body).then(function (dbLeaderboard) {
+        console.log('req.body:', req.body);
+        console.log('DB Leaderboard:', dbLeaderboard);
         res.json(dbLeaderboard);
       });
     }
