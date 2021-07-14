@@ -131,7 +131,19 @@ module.exports = (db) => {
     }
   });
  
-  
+  router.get('/falling', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+    
+      res.render('./falling', user);
+      
+    } else {
+      res.render('./falling');
+    }
+  });
   
   
   

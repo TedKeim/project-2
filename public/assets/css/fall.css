@@ -1,0 +1,119 @@
+*{
+    font-family:arial,san-serif;
+  }
+  body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-image: linear-gradient(to right top, #110f18, #0e0c17, #0b0817, #080516, #040116);
+    height:100vh;
+  }
+  .ball{
+    border-radius:50%;
+    animation: fadeIn 1.5s 4s linear;
+    position:absolute;
+    cursor:pointer;
+    animation : animationBall 2s infinite;
+  }
+  @keyframes animationBall{
+    0%,40%,80%,100%{
+      box-shadow:0px 0px 35px #fff;
+    }
+    10%,50%,90%{
+      box-shadow:0px 0px 5px #fff;
+    }
+  }
+  button{
+    transform:translate(-50%,-50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    background:#FF3030;
+    font-size:30px;
+    color:#fff;
+    padding:10px 30px;
+    border:0px;
+    cursor:pointer;
+    z-index:3;
+    outline:none;
+    transition:.5s all;
+  }
+  button:hover{
+    background:#CD2626;
+  }
+  #left, #right{
+    position:absolute;
+    width:50%;
+    height:100%;
+    background:black;
+    z-index:2;
+    transition:1s all;
+  }
+  #left{
+    left:0;
+    top:0;
+  }
+  #right{
+    right:0;
+    bottom:0;
+  }
+  .hide{
+    opacity:0;
+  }
+  #count-down{
+    transform:translate(-50%,-50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    font-size:200px;
+    z-index:2;
+    transition:.3s all;
+    color:#fff;
+    text-shadow:0px 0px 10px #fff;
+  }
+  #box{
+    box-shadow:0px 2px 15px #fff;
+    transform:translate(-550%,-50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:300px;
+    height:300px;
+    background-image: linear-gradient(to right top, #051937, #0e2d5f, #1e4289, #3358b5, #4d6ee3);
+    z-index:3;
+    color:#fff;
+    text-shadow:0px 0px 25px red;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    transition:.5s all;
+  }
+  #box p{
+    font-size:30px;
+  }
+  #box span{
+    font-size:80px;
+  }
+  #box #close{
+    position:absolute;
+    top:5%;
+    right:5%;
+    font-size:25px;
+    transition:.3s all;
+  }
+  #close:hover{
+    transform:scale(1.5);
+    color:red;
+  }
+  @keyframes fadeIn{
+    0%,20%,40%,60%,80%,100%{
+      opacity:.6;
+      transform:scale(1.2);
+    }
+    10%,30%,50%,70%,90%{
+      opacity:.2;
+      transform:scale(.9);
+    }
+  }
