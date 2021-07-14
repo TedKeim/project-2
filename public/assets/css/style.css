@@ -94,15 +94,15 @@ html body {
     url('https://images-na.ssl-images-amazon.com/images/I/61gCK6ClC7L._AC_SL1468_.jpg'),
     url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
     url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-  background-repeat: repeat-x;
-
+  background-attachment: fixed;
+  
   background-position: 
     0 100%,
     0 100%,
     0 100%,
     0 100%,
     0 100;
-  animation: 400s para infinite linear;
+     animation: 400s para infinite linear;
 }
 
 @keyframes para {
@@ -154,4 +154,20 @@ html body {
   background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222, 223, 224));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.olympic-symbol {
+  width: 200px;
+  border-radius: 15px;
+}
+
+.torch {
+  width: 200px;
+  border-radius: 15px;
+}
+
+.medal {
+  width: 200px;
+  height: 180px;
+  border-radius: 15px;
 }
