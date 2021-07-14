@@ -1,6 +1,3 @@
-const router = require("express").Router();
-const request = require('request');
-
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
@@ -17,12 +14,12 @@ const questions = [];
 
 request.get({
   url: 'https://opentdb.com/api.php?amount=50&category=21&type=multiple'
-}, function(error, response, body) {
-  if(error) return console.error('Request failed:', error);
-  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-  else console.log(body)
-});
-
+}, function (error, response, body) {
+  if (error) return console.error('Request failed:', error);
+  else if (response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  else console.log(body);
+})
+console.log('HELOOOOOO')
   .then((loadedQuestions) => {
     questions = loadedQuestions.results.map((loadedQuestion) => {
       const formattedQuestion = {
@@ -68,21 +65,27 @@ getNewQuestion = () => {
   choices.forEach(choice => {
     const number = choice.dataset['number'];
     choice.innerHTML = currentQuestion['choice' + number];
-  });
+  })
   availableQuestions.splice(questionIndex, 1);
   acceptingAnswers = true;
-};
+}
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
     if (!acceptingAnswers) return;
+  
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
-
+    
     const classToApply =
     selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
+    incrementScore = (num) => {
+      score += num;
+      scoreText.innerText = score;
+      console.log('HELOOOOOO')
+    }
+    
     if (classToApply === 'correct') {
       incrementScore(CORRECT_BONUS);
     }
@@ -93,12 +96,4 @@ choices.forEach(choice => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
     }, 1000);
-  });
-});
-
-incrementScore = (num) => {
-  score += num;
-  scoreText.innerText = score;
-};
-
-module.exports = router;
+  })};

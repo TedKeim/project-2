@@ -1,32 +1,31 @@
-{{> nav/nav-block}}
-
 <div id="main-container" class="container container-fluid">
   <div class="jumbotron header-wrap">
     <p class="lead"><strong>Olympic Hangman </strong></p>
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
-      
-    
-    
-    <div class="float-right">
+      <h1>First Name {{user.id}}</h1>
+    {{!-- <div class="float-right">
 
-  </div>
-    <div class="container">
+    </div> --}}
+    <div>
         <h2 id="hangmanPlay"></h2>
-        <h2>Guess a letter for the word above: </h2> <input type="text" onfocus="this.value=''" id="guessInput" maxlength="1"> <button type="button" class="btn btn-dark" id="guessBtn">Try!</button>
+        <p>Guess a letter for the word above: </p> 
+        <input type="text" id="guessInput" maxlength="1"> <button type="button" class="btn btn-dark" id="guessBtn">Try!</button>
         <div id='wrong'>
             <p>
                 
             </p>
         </div>
         <div class="card">
-            <h5 class="card-header">Strikes (Max5)</h5>
+            <h5 class="card-header">Strikes <span id="strikesCounter"></span> (Max 5)</h5>
             <div class="card-body">
-             
               <p class="card-text" id="win"></p>
-              <div class = "col-lg-2" style=" text-align: center; "> <h4 class="text-success"> Score </h4> </div>
-                <div  class = "col-lg-2" style=" text-align: center;  border:5px solid rgb(3, 53, 3); margin: 3px " id="score">  </div>
+              <div class = "col-lg-2" style=" text-align: center; ">
+                <h4 class="text-success"> Score </h4>
+              </div>
+              <div class="col-lg-2" style="text-align: center; border:5px solid rgb(3, 53, 3); margin: 3px;" id="score">  </div>
+              <span id="user" data-id="{{user.id}}"></span>
             </div>
           </div>
 
@@ -36,7 +35,8 @@
     {{/if}}
     <h5 id="login-err-msg"></h5>
   </div>
-
+  </div>
+  </div>
 </div>
 
 {{> modal/login-block}}

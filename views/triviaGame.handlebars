@@ -1,54 +1,12 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="/">
-    Olympic Game!
-  </a>
-  
-  <!-- Links -->
-  <ul class="nav navbar-nav ml-auto">
+{{> nav/nav-block}}
 
-    {{#if isloggedin}}
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/Dashboard">Game Dashboard</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="/Leaderboard">Leaderboards</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/example">Request New Features!</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
-     
-    {{else}}
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="login-modal">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register" data-register={{register}}>Register</a>
-      </li>
-    {{/if}}
-  </ul>
-</nav>
+<div id="main-container" class="container container-fluid">
+  <div class="jumbotron header-wrap">
+    <p class="lead"><strong>Olympics Trivia</strong></p><hr class="my-4">
+    <div>
+      {{#if isloggedin}}
+      <link rel="stylesheet" href="/assets/css/trivia.css">
 
-{{> modal/login-block}}
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quick Quiz - Play</title>
-    <link rel="stylesheet" href="/public/assets/css/style.css" />
-  </head>
-  <body>
-    <div class="container">
       <div id="game" class="justify-center flex-column hidden">
         <div id="hud">
           <div id="hud-item">
@@ -84,6 +42,14 @@
         </div>
       </div>
     </div>
+
     <script src="/routes/triviaRoutes.js"></script>
-  </body>
-</html>
+    {{else}}
+    <p>You need to log in to use this app.</p>
+    {{/if}}
+    <h5 id="login-err-msg"></h5>
+  </div>
+
+</div>
+
+{{> modal/login-block}}
