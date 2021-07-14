@@ -123,11 +123,18 @@ module.exports = (db) => {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('wordtype', user);
+    
+      res.render('./wordtype', user);
+      
     } else {
-      res.render('wordtype');
+      res.render('./wordtype');
     }
   });
+ 
+  
+  
+  
+  
   // Leaderboard routes
   router.get('/LeaderBoard', (req, res) => {
     if (req.isAuthenticated()) {
