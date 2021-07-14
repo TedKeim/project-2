@@ -67,6 +67,11 @@ body {
 .lead {
   font-size: 1.8rem;
   font-weight: 500;
+  font-size: 35px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(63, 148, 255), rgb(54, 55, 56));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .userId h2,
@@ -95,7 +100,7 @@ html body {
     url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
     url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
   background-attachment: fixed;
-  
+
   background-position: 
     0 100%,
     0 100%,
