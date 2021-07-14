@@ -43,7 +43,6 @@ body {
 }
 
 .container {
-
 	display: grid;
 	justify-items: auto;
 	margin-top: 8%;
@@ -89,7 +88,6 @@ hr {
 
 html body {
   height: 100%;
-  /* max-height: 600px; */
   width: 1000px;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: url('https://images.mentor.se/wp-content/uploads/sites/5/2019/02/28135709/youth-png-12.png'),
@@ -104,13 +102,6 @@ html body {
     0 100%,
     0 100%,
     0 100;
-  /* background-size: 
-    2500px,
-    800px,
-    500px 200px,
-    1000px,
-    400px 260px; */
-
   animation: 400s para infinite linear;
 }
 
