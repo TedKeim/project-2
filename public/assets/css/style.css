@@ -43,15 +43,18 @@ body {
 }
 
 .container {
-  display: grid;
-  justify-items: auto;
-  margin-top: 8%;
-  background: rgba(86, 101, 115, 0.6);
-  height: 100%;
-  width: 100%;
-  padding-bottom: 2%;
-  border-radius: 0.25rem;
-  margin-bottom: 2%;
+	display: grid;
+	justify-items: auto;
+	margin-top: 8%;
+	background: rgba(86, 101, 115, 0.6);
+	height: 100%;
+	width: 100%;
+	padding-bottom: 2%;
+	border-radius: 0.25rem;
+	margin-bottom: 2%;
+	position: relative;
+	left: 220px;
+
 }
 
 [data-useremail='true'] {
@@ -64,6 +67,11 @@ body {
 .lead {
   font-size: 1.8rem;
   font-weight: 500;
+  font-size: 35px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(63, 148, 255), rgb(54, 55, 56));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .userId h2,
@@ -85,17 +93,21 @@ hr {
 
 html body {
   height: 100%;
-  /* max-height: 600px; */
   width: 1000px;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: url('https://images.mentor.se/wp-content/uploads/sites/5/2019/02/28135709/youth-png-12.png'),
     url('https://images-na.ssl-images-amazon.com/images/I/61gCK6ClC7L._AC_SL1468_.jpg'),
     url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
     url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-  background-repeat: repeat-x;
-  background-position: 0 100%, 0 100%, 0 100%, 0 100%, 0 100;
-  background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
-  animation: 400s para infinite linear;
+  background-attachment: fixed;
+
+  background-position: 
+    0 100%,
+    0 100%,
+    0 100%,
+    0 100%,
+    0 100;
+     animation: 400s para infinite linear;
 }
 
 @keyframes para {
@@ -119,10 +131,14 @@ html body {
   word-spacing: normal;
   color: rgb(255, 255, 255);
   margin: -15px;
+  font-size: 27px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(222, 223, 224), rgb(21, 97, 173));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .game-link:hover {
-  font-weight: bolder;
-  color: white;
+  font-weight: 900;
 }
 .game {
   flex-wrap: wrap;
@@ -147,4 +163,20 @@ html body {
   background: -webkit-linear-gradient(rgb(21, 97, 173), rgb(222, 223, 224));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.olympic-symbol {
+  width: 200px;
+  border-radius: 15px;
+}
+
+.torch {
+  width: 200px;
+  border-radius: 15px;
+}
+
+.medal {
+  width: 200px;
+  height: 180px;
+  border-radius: 15px;
 }

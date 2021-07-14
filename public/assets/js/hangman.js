@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+var newGamebutton = document.createElement("button");
+newGamebutton.innerHTML = "Start New Game";
+
+var guessInput = document.getElementById("guessInput")
+var strikes = 0
+var Olympic_games = [
+    'Swimming',
+    'Basketball',
+    'Gymnastics',
+    'Weight Lifting',
+    'Javelin Throw'
+]
+let initialScore = 0;
+let Score = document.getElementById("score")
+let wrong = document.querySelector("#wrong")
+var originalMessage = wrong.innerHTML
+let win = document.querySelector("#win");
+body.appendChild(newGamebutton);
+var winningMessage =win.innerHTML
+=======
 const guessInput = document.getElementById('guessInput');
 let strikes = 0;
 const olympicGames = [
@@ -13,6 +34,7 @@ const wrong = document.querySelector('#wrong');
 const originalMessage = wrong.innerHTML;
 const win = document.querySelector('#win');
 const winningMessage = win.innerHTML;
+>>>>>>> a2c10ed2dfcd577622df8154e02102342e58b22b
 
 const sampleFromDB = [
   {
@@ -37,6 +59,25 @@ for (i = 0; i < randomGameChoice.length; i++) {
 document.querySelector('#hangmanPlay').textContent = result;
 
 function manageGuess() {
+<<<<<<< HEAD
+    if(randomGameChoice.toLowerCase().includes(guessInput.value.toLowerCase())){
+        for(j=0; j<randomGameChoice.length; j++){
+            // console.log(randomGameChoice[j])
+            if (guessInput.value.toLowerCase() == randomGameChoice[j].toLowerCase()) {
+                result = result.substring(0, j) + randomGameChoice[j] + result.substring(j+1)
+                console.log("there's a match", result)
+                initialScore +=10
+                Score.innerHTML = initialScore
+            }
+        }
+        checkIfWon()
+        document.querySelector("#hangmanPlay").textContent = result;
+    }else{
+        wrong.innerHTML += "Sorry! No letter exists in the word. Try again"
+        setTimeout(function() {
+        wrong.innerHTML = originalMessage
+  }, 2500)
+=======
   if (randomGameChoice.toLowerCase().includes(guessInput.value.toLowerCase())) {
     let j = '';
     for (j = 0; j < randomGameChoice.length; j++) {
@@ -60,6 +101,7 @@ function manageGuess() {
     setTimeout(function () {
       wrong.innerHTML = originalMessage;
     }, 2500);
+>>>>>>> a2c10ed2dfcd577622df8154e02102342e58b22b
 
     console.log('nothing matched');
     strikes++;
@@ -77,8 +119,13 @@ function checkIfWon() {
   } else {
     win.innerHTML += 'Way to Go, you win! Check your final score below!';
 
+<<<<<<< HEAD
+        initialScore += 20;
+        Score.innerHTML = initialScore
+=======
     initialScore += 100;
     score.innerHTML = initialScore;
+>>>>>>> a2c10ed2dfcd577622df8154e02102342e58b22b
 
     const userId = document.getElementById('user').dataset.id;
     console.log('userId: ', userId);
