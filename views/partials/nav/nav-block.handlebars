@@ -9,6 +9,21 @@
   <!-- Links -->
   <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
 
+
+    {{!-- This code below was for a working dropdown menue fix in progress. --}}
+        {{!-- <button onclick="myFunction()" class="dropbtn" data-bs-toggle="collapse"data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <span class="navbar-toggler-icon">
+  <div id="myDropdown" class="dropdown-content">
+    <a href="/Dashboard">Dashboard</a>
+    <a href="/Leaderboard">Leaderboard</a>
+    <a href="/example">Request</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+  </div>
+      </span>
+    </button>
+   --}}
+
     {{#if isloggedin}}
       
       <li class="nav-item">
@@ -41,3 +56,8 @@
 </nav>
 
 {{> modal/login-block}}
+  
+  
+
+
+
