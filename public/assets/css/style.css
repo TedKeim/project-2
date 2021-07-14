@@ -255,10 +255,10 @@ html body {
   font-family: inherit;
   margin: 0;
 }
-
+/* 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
   background-color: red;
-}
+} */
 
 .dropdown-content {
   display: none;
