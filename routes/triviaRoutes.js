@@ -1,9 +1,11 @@
+const Trivia = require('open-trivia-db');
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
 const progressBarFull = document.getElementById('progressBarFull');
 const scoreText = document.getElementById('score');
 const game = document.getElementById('game');
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -12,15 +14,21 @@ const availableQuestions = [];
 
 const questions = [];
 
-request.get({
-  url: 'https://opentdb.com/api.php?amount=50&category=21&type=multiple'
-}, function (error, response, body) {
-  if (error) return console.error('Request failed:', error);
-  else if (response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-  else console.log(body);
-})
-console.log('HELOOOOOO')
-  .then((loadedQuestions) => {
+async function startTrivia() {
+  const options = {
+    amount: 50,
+    category: 'sports',
+    type: 'multiple-choice',
+    difficulty: 'any',
+    encode: 'none',
+    token: await Trivia.getNewToken()
+  };
+  
+  const questions = await Trivia.getQuestions(options);
+
+  startTrivia();
+
+  (loadedQuestions) => {
     questions = loadedQuestions.results.map((loadedQuestion) => {
       const formattedQuestion = {
         question: loadedQuestion.question
@@ -34,17 +42,14 @@ console.log('HELOOOOOO')
         formattedQuestion['choice' + (index + 1)] = choice;
       });
       return formattedQuestion;
-    });
-    startGame();
-  })
-  .catch(err => {
-    console.error(err);
-  });
-
+    })
+  }};
+    
+ 
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 5;
 
-startGame = () => {
+startTrivia = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
@@ -56,6 +61,7 @@ getNewQuestion = () => {
     return window.location.assign('/Leaderboard');
   }
   questionCounter++;
+  console.log('hewewew');
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
   progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
   const questionIndex = Math.Floor(Math.random() * availableQuestions.length);
@@ -96,4 +102,5 @@ choices.forEach(choice => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
     }, 1000);
-  })};
+  })
+};
