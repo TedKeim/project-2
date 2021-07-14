@@ -138,8 +138,7 @@ html body {
   -webkit-text-fill-color: transparent;
 }
 .game-link:hover {
-  font-weight: bolder;
-  color: white;
+  font-weight: 900;
 }
 .game {
   flex-wrap: wrap;
