@@ -4,14 +4,12 @@
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
-      <h1>First Name {{user.id}}</h1>
-    {{!-- <div class="float-right">
-
-    </div> --}}
+      {{!-- <h1>First Name {{userInfo.id}}</h1> --}}
+    
     <div>
         <h2 id="hangmanPlay"></h2>
         <p>Guess a letter for the word above: </p> 
-        <input type="text" onfocus="this.value=''" id="guessInput" maxlength="1"> <button type="button" class="btn btn-dark" id="guessBtn">Try!</button>
+        <input type="text" id="guessInput" maxlength="1" onfocus="this.value=''"> <button type="button" class="btn btn-dark" id="guessBtn">Try!</button>
         <div id='wrong'>
             <p>
                 
@@ -25,7 +23,7 @@
                 <h4 class="text-success"> Score </h4>
               </div>
               <div class="col-lg-2" style="text-align: center; border:5px solid rgb(3, 53, 3); margin: 3px;" id="score">  </div>
-              <span id="user" data-id="{{user.id}}"></span>
+              <span id="user" data-id="{{userInfo.id}}"></span>
             </div>
           </div>
 
@@ -39,4 +37,4 @@
   </div>
 </div>
 
-{{> modal/login-block}}
+{{!-- {{> modal/login-block}} --}}
