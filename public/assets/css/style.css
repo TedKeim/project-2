@@ -131,6 +131,11 @@ html body {
   word-spacing: normal;
   color: rgb(255, 255, 255);
   margin: -15px;
+  font-size: 27px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(222, 223, 224), rgb(21, 97, 173));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .game-link:hover {
   font-weight: bolder;
