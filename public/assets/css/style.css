@@ -1,7 +1,16 @@
+
+
+html {
+  display: table;
+  margin: auto;
+}
+
 body {
   color: white;
   background-size: cover;
   height: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 .card-header {
   color: black;
