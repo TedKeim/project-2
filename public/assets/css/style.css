@@ -55,6 +55,8 @@ body {
 	position: relative;
 	left: 220px;
 
+}
+
 [data-useremail='true'] {
   color: white !important;
 }
@@ -93,7 +95,13 @@ html body {
     url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
     url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
   background-repeat: repeat-x;
-  background-position: 0 100%, 0 100%, 0 100%, 0 100%, 0 100;
+
+  background-position: 
+    0 100%,
+    0 100%,
+    0 100%,
+    0 100%,
+    0 100;
   animation: 400s para infinite linear;
 }
 
