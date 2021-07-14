@@ -1,10 +1,9 @@
-{{> nav/nav-block}}
 
       {{#if isloggedin}}
 <div id="main-container" class="container container-fluid">
   <div class="jumbotron header-wrap">
     <p class="lead"><strong>Olympics Trivia</strong></p><hr class="my-4">
-    <div>
+    
       <link rel="stylesheet" href="/assets/css/trivia.css">
 
       <div id="game" class="justify-center flex-column hidden">
@@ -13,6 +12,9 @@
             <p id="progressText" class="hud-prefix">
               Question
             </p>
+              <div id="progressBar">
+              <div id="progressBarFull"></div>
+            </div>
           </div>
           <div id="hud-item">
             <p class="hud-prefix">
@@ -23,7 +25,7 @@
             </h1>
           </div>
         </div>
-        <h2 id="question">{{question}}</h2>
+        <h2 id="question"></h2>
         <div class="choice-container">
           <p class="choice-prefix">A</p>
           <p class="choice-text" data-number="1"></p>
@@ -41,15 +43,15 @@
           <p class="choice-text" data-number="4"></p>
         </div>
       </div>
-    </div>
+    
+    <script src="/assets/js/triviaApi.js"></script>
 
     {{else}}
     <p>You need to log in to use this app.</p>
     {{/if}}
     <h5 id="login-err-msg"></h5>
-  </div>
+  
 
     
-</div>
 
 {{> modal/login-block}}
