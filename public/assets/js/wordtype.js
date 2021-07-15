@@ -296,7 +296,7 @@ var temp = document.querySelector('.time');
   		button.disabled = true;	
   	});
 
-
+      
   	function typing(e) {
   			typed = String.fromCharCode(e.which);
   			for (var i = 0; i < spans.length; i++) {
@@ -330,6 +330,44 @@ var temp = document.querySelector('.time');
 
   			}
   	}
+      function checkIfWon() {
+        if (result.includes('*')) {
+          // game is not over
+        } else {
+          win.innerHTML += 'Way to Go, you win! Check your final score below!';
+      
+          initialScore += 100;
+          score.innerHTML = initialScore;
+      
+          const userId = document.getElementById('user').dataset.id;
+          console.log('userId: ', userId);
+      
+          const myHeaders = new Headers();
+          myHeaders.append('Content-Type', 'application/json');
+          myHeaders.append(
+            'Cookie',
+            'connect.sid=s%3AxZCfJ4AKPxQp_-jBZvhQ7WrHZ9prnHBa.0lGg8Y%2BKvMQWlkwwHE0xEigxKDMjoq1rJj9XpUikp5s'
+          );
+      
+          const raw = JSON.stringify({
+            userId: userId,
+            game: 'wordtype',
+            score: parseInt(score.innerHTML)
+          });
+      
+          const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          };
+      
+          fetch('/api/wordtype', requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.log('error', error));
+        }
+      }
 
   
 
