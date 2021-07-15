@@ -2,6 +2,7 @@ document.addEventListener("keydown", typing, false);
 var temp = document.querySelector('.time');
  	var button = document.querySelector("#startbtn");
      console.log('button ', button)
+     var button2 = document.querySelector("#restartbtn")
  	var words = document.querySelector(".words");
  	var timerDiv = document.querySelector(".time");
  	var scoreDiv = document.querySelector(".score");
@@ -261,7 +262,11 @@ var temp = document.querySelector('.time');
     		seconds--;
     		temp.innerHTML = seconds;
     		if (seconds === 0) {
-    			alert("Game over! Your score is " + points);
+    			// alert("Game over! Your score is " + points);
+          $(document).ready(function() {
+            $(".modal-body").html("Your score is " + points)
+          $("#myModal").modal();
+          })
     			scoreDiv.innerHTML = "0";
     			words.innerHTML = "";
     			button.disabled = false;
@@ -272,6 +277,7 @@ var temp = document.querySelector('.time');
     		}
  		}, 1000);
   	}
+
 
   	function random() {
   		words.innerHTML = "";
@@ -295,6 +301,11 @@ var temp = document.querySelector('.time');
   		random();
   		button.disabled = true;	
   	});
+
+    document.querySelector('.button2').addEventListener("click", function(e) {
+      window.location.reload();
+      return false;
+    });
 
       
   	function typing(e) {
