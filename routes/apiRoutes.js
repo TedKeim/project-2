@@ -19,9 +19,9 @@ module.exports = (passport, db) => {
   router.delete('/triviaGame/:id', AppController.deleteExample);
 
   // Hangman App
-  router.get('/hangman', AppController.getExamples);
+  router.get('/hangman', AppController.getHangmanScores);
   router.post('/hangman', AppController.createHangmanScore);
-  router.delete('/hangman/:id', AppController.deleteExample);
+  // router.delete('/hangman/:id', AppController.deleteExample);
 
   // Typing word app
   router.get('/wordtype', AppController.getExamples);

@@ -22,7 +22,18 @@
     </div>
     <div class="jumbotron header-wrap">
       
-    
+        <h2>{{msg}}</h2>
+        <h4>Hamngman Highscores</h4>
+        <ul id="hangman-list" class="list-group">
+          {{#each leaderboard-hangman}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            {{this.score}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+<script src="/assets/js/leaderboard.js"></script>
    
     {{else}}
     <p>You need to log in to use this app.</p>
