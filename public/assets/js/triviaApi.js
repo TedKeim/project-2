@@ -93,13 +93,13 @@ getNewQuestion = () => {
     });
   });
 
-document.getElementsByClassName('.restartbtn').addEventListener("click", restart())
-function restart() {
-  function startGame() {
-    return;
-  }
-  startGame();
-}
+// document.getElementsByClassName('.restartbtn').addEventListener("click", restart())
+// function restart() {
+//   function startGame() {
+//     return;
+//   }
+//   startGame();
+// }
 
 
 
