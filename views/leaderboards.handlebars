@@ -1,9 +1,7 @@
-
-
 <div id="main-container" class="container">
 
   <div class="jumbotron header-wrap">
-    <p class="lead" id= "finalScore"><strong>MiniGame Leaderboards</strong></p>
+    <p class="lead" id="finalScore"><strong>MiniGame Leaderboards</strong></p>
         <div id="highScores" class="flex-center flex-column"> 
             <ul id="highScoresList"></ul>
             <div class="row">
@@ -25,7 +23,7 @@
         <h2>{{msg}}</h2>
         <h4>Hamngman Highscores</h4>
         <ul id="hangman-list" class="list-group">
-          {{#each leaderboard-hangman}}
+          {{#each hangmanScore}}
           <li data-id="{{this.id}}" class="list-group-item">
             {{this.score}}
           </li>
