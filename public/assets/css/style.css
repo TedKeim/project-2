@@ -308,3 +308,15 @@ html body {
 .show {
   display: block;
 }
+
+.modal-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal-content {
+  color: rgb(31, 75, 126);
+}
+
+
+
