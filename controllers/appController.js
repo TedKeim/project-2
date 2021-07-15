@@ -22,6 +22,14 @@ module.exports = function (db) {
         res.json(dbExample);
       });
     },
+    // Get all Hangman Scores
+    getHangmanScores: function (req, res) {
+      db.Leaderboards.findAll({
+        where: { game: 'hangman' }
+      }).then(function (dbLeaderboard) {
+        res.json(dbLeaderboard);
+      });
+    },
     // Create a new Hangman score
     createHangmanScore: function (req, res) {
       console.log('HEEEEERRRRREE!!!!!!');
