@@ -36,75 +36,68 @@ function useApiData (data) {
     answerChoices.forEach((choice, index) => {
       formattedQuestion['choice' + (index + 1)] = choice;
     });
+
     return formattedQuestion;
   });
-  const CORRECT_BONUS = 10;
-  const MAX_QUESTIONS = 10;
-  startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [...questions];
-    getNewQuestion();
-    game.classList.remove('hidden');
-    loader.classList.add('hidden');
-  };
-  getNewQuestion = () => {
-    if (availableQuestions.length == 0 || questionCounter >= MAX_QUESTIONS) {
-      localStorage.setItem('mostRecentScore', score);
-      return window.location.assign('/Leaderboard');
-    }
-  };
-  questionCounter++;
-  progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-  progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
-
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = availableQuestions[questionIndex];
-  question.innerHTML = currentQuestion.question;
-  choices.forEach((choice) => {
-    const number = choice.dataset['number'];
-    choice.innerHTML = currentQuestion['choice' + number];
-  
-
-  document.querySelector('#question').innerHTML = `Question: ${data.results[0].question}`;
-  document.querySelector('#choice-text1').innerHTML = data.results[0].correct_answer;
-  document.querySelector('#choice-text2').innerHTML = data.results[0].incorrect_answers[0];
-  document.querySelector('#choice-text3').innerHTML = data.results[0].incorrect_answers[1];
-  document.querySelector('#choice-text4').innerHTML = data.results[0].incorrect_answers[2];
 }
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 10;
+startGame = () => {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
+  getNewQuestion();
+  game.classList.remove('hidden');
+  loader.classList.add('hidden');
+};
+getNewQuestion = () => {
+  // eslint-disable-next-line eqeqeq
+  if (availableQuestions.length == 0 || questionCounter >= MAX_QUESTIONS) {
+    localStorage.setItem('mostRecentScore', score);
+    return window.location.assign('/Leaderboard');
+  }
+};
+questionCounter++;
+progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
-const correctButton = document.querySelector('#choice-text1');
+const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+currentQuestion = availableQuestions[questionIndex];
 
-correctButton.addEventListener('click', () => {
-  alert('Correct!');
-  sendApiRequest();
+question.innerHTML = currentQuestion.question;
+choices.forEach((choice) => {
+  const number = choice.dataset['number'];
+  choice.innerHTML = currentQuestion['choice' + number];
 });
 
+availableQuestions.splice(questionIndex, 1);
+acceptingAnswers = true;
 
-// availableQuestions.splice(questionIndex, 1);
-// acceptingAnswers = true;
-// choices.forEach(choice => {
-//   choice.addEventListener('click', (e) => {
-//     if (!acceptingAnswers) return;
-//     acceptingAnswers = false;
-//     const selectedChoice = e.target;
-//     const selectedAnswer = selectedChoice.dataset['number'];
-//     const classToApply =
+choices.forEach(choice => {
+  choice.addEventListener('click', (e) => {
+    if (!acceptingAnswers) return;
 
-//       // eslint-disable-next-line eqeqeq
-//       selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-//     incrementScore = (num) => {
-//       score += num;
-//       scoreText.innerText = score;
-//     }
-//     if (classToApply === 'correct') {
-//       incrementScore(CORRECT_BONUS);
-//     }
-//     selectedChoice.parentElement.classList.add(classToApply);
-//     setTimeout(() => {
-//       selectedChoice.parentElement.classList.remove(classToApply);
-//       getNewQuestion();
-//     }, 1000);
-//   })
-// });
-// startGame();
+    acceptingAnswers = false;
+
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset['number'];
+
+    const classToApply =
+        // eslint-disable-next-line eqeqeq
+        selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+    incrementScore = (num) => {
+      score += num;
+      scoreText.innerText = score;
+    }
+    if (classToApply === 'correct') {
+      incrementScore(CORRECT_BONUS);
+    }
+    selectedChoice.parentElement.classList.add(classToApply);
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
+  })
+});
+startGame();
