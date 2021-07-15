@@ -30,9 +30,7 @@ body {
   body {
     padding: top 20%;
   }
-  nav {
-    max-height: 20%;
-  }
+ 
 }
 
 @media only screen and (max-width: 600px) {
@@ -43,6 +41,9 @@ body {
 @media only screen and (max-width: 300px) {
   body {
     padding-top:44%;
+  }
+  .dropdown{
+    display:show;
   }
 }
 .card-header {
@@ -206,7 +207,10 @@ html body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+#navbarResponsive{
+  margin-left:20%;
+  padding-right:10px;
+}
 .olympic-symbol {
   width: 200px;
   border-radius: 15px;
@@ -242,6 +246,8 @@ html body {
 .dropdown {
   float: left;
   overflow: hidden;
+  display:none;
+  
 }
 
 .dropdown .dropbtn {
@@ -254,6 +260,10 @@ html body {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+}
+.dropbtn{
+  margin: 18px;
+  padding: 3%;
 }
 /* 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
