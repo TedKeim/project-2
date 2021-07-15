@@ -1,13 +1,10 @@
-
-
 html {
   display: table;
   margin: auto;
 }
 
 body {
- 
-   display: table-cell;
+  display: table-cell;
   vertical-align: middle;
   color: white;
   background-size: cover;
@@ -38,6 +35,7 @@ body {
     padding-top:25%;
   }
 }
+
 @media only screen and (max-width: 300px) {
   body {
     padding-top:44%;
@@ -46,6 +44,7 @@ body {
     display:show;
   }
 }
+
 .card-header {
   color: black;
 }
@@ -151,6 +150,7 @@ html body {
     0 100%,
     0 100;
      animation: 400s para infinite linear;
+     padding: 30px;
 }
 
 @keyframes para {
@@ -166,9 +166,9 @@ html body {
       400px 0;
   }
 }
+
 .game-link {
   flex-wrap: wrap;
-  font-size: larger;
   align-content: center;
   vertical-align: middle;
   word-spacing: normal;
@@ -179,13 +179,23 @@ html body {
   background: -webkit-linear-gradient(rgb(222, 223, 224), rgb(21, 97, 173));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all .5s ease-in-out;
 }
 .game-link:hover {
-  font-weight: 900;
+  text-shadow:
+  0 0 10px rgb(72, 117, 201),
+  0 0 50px rgba(44, 86, 175, 0.8),
+  0 0 75px rgba(88, 179, 240, 0.6),
+  0 0 76px rgba(24, 79, 151, 0.4),
+  0 0 77px rgba(16, 48, 134, 0.5),
+  0 0 78px rgba(0, 0, 0, 0.4),
+  0 0 79px rgba(0, 0, 0, 0.3),
+  0 0 80px rgba(2, 2, 2, 0.2),
+  0 0 85px rgba(0, 0, 0, 0.1);
 }
+
 .game {
   flex-wrap: wrap;
-
   padding: 15px;
 }
 
@@ -207,10 +217,12 @@ html body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 #navbarResponsive{
   margin-left:20%;
   padding-right:10px;
 }
+
 .olympic-symbol {
   width: 200px;
   border-radius: 15px;
@@ -265,6 +277,7 @@ html body {
   margin: 18px;
   padding: 3%;
 }
+
 /* 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
   background-color: red;
