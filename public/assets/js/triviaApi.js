@@ -93,9 +93,15 @@ getNewQuestion = () => {
     });
   });
 
-  // document.querySelector('.button2').addEventListener("click", function() {
-  //   window.location.reload();
-  //   return false;
-  // });
+document.getElementsByClassName('.restartbtn').addEventListener("click", restart())
+function restart() {
+  function startGame() {
+    return;
+  }
+  startGame();
+}
+
+
+
  
  
