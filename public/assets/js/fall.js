@@ -80,8 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(time);
         seconds = 60;
         button.disabled = false;
-        timer.innterHTMLhide();
-
       }
     }, 1000);
   }
