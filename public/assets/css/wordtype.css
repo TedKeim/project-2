@@ -32,19 +32,18 @@ h1 + p {
 }
 
 button {
-   border: none;
-  background-color: #FF7373;
-  box-shadow: 0px 5px 0px 0px #4698ce;
-  outline: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 22px;
-  text-decoration: none;
-  margin: 20px;
-  color: #fff;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+    flex-wrap: wrap;
+    align-content: center;
+    vertical-align: middle;
+    word-spacing: normal;
+    color: rgb(255, 255, 255);
+    margin: -15px;
+    font-size: 27px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(222, 223, 224), rgb(21, 97, 173));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
 }
 
 button:active {
@@ -55,7 +54,8 @@ button:active {
 
 .scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span {
     font-size: 30px;
-    color: #FF7373;
+    color: rgb(21, 97, 173);
+    
 }
 
 .wordsWrap {
@@ -65,5 +65,5 @@ button:active {
 .words span{
     font-size: 60px;
     letter-spacing: 1px;
-    color: #ECF0F1;
+    color: rgb(21, 97, 173);
 }

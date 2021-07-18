@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded",function(){
     const divBox = document.querySelector("#box");
     const divCountDown = document.querySelector("#count-down");
     const spanScores = document.querySelector("#scores");
-    const closeBox = document.querySelector("#close");
+    
+    
     const arrayColor = ["#011C41","#F2E8C3","#F5A219","#F27612","#DA2A04","#FF77A6","#FFC7B2","#A0FEFE","#B6FFBC","#FFBBFF", "#7fff00"];
     var  countDown = 3;
    
