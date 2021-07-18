@@ -2,7 +2,6 @@ document.addEventListener("keydown", typing, false);
 var temp = document.querySelector('.time');
 var button = document.querySelector("#startbtn");
 console.log('button ', button)
-
 const words = document.querySelector(".words");
 const timerDiv = document.querySelector(".time");
 const scoreDiv = document.querySelector(".score");

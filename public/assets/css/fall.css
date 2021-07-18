@@ -109,10 +109,12 @@
     transform:scale(1.5);
     color:red;
   }
-
-  h{
-     color:#ff1302',
-    
+  .timer{
+    margin-top:10%;
+    margin-left:7%;
   }
- 
+  .time{
+    margin-top:10%;
+    margin-left:7%;
+  }
   
