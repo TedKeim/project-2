@@ -9,18 +9,18 @@ document.addEventListener("DOMContentLoaded",function(){
     const divCountDown = document.querySelector("#count-down");
     const spanScores = document.querySelector("#scores");
     const closeBox = document.querySelector("#close");
-    const arrayColor = ["#011C41","#F2E8C3","#F5A219","#F27612","#DA2A04","#FF77A6","#FFC7B2","#A0FEFE","#B6FFBC","#FFBBFF"];
-    var  countDown = 5;
-    var countPlus = 0;
+    const arrayColor = ["#011C41","#F2E8C3","#F5A219","#F27612","#DA2A04","#FF77A6","#FFC7B2","#A0FEFE","#B6FFBC","#FFBBFF", "#7fff00"];
+    var  countDown = 3;
+   
     var count = 0;
     function Ball(width, height, arrayColor){
       this.color = arrayColor[Math.floor(Math.random()*10)];
       this.width = width;
       this.height = height;
-      this.radius = Math.floor(Math.random()*100) + 50;
+      this.radius = Math.floor(Math.random()*100) + 40;
       this.left = Math.floor(Math.random() * (this.width - this.radius)) ;
       this.top = -this.radius; 
-      this.speedY = 5;
+      this.speedY = 3;
     }
     Ball.prototype.draw = function(ball){
       body.appendChild(ball);
@@ -56,14 +56,7 @@ document.addEventListener("DOMContentLoaded",function(){
       var ballRand = new Ball(width,height,arrayColor);
       ballRand.draw(ball);  
     }
-    closeBox.addEventListener("click",function(){
-      divBox.style.transform = "translate(-550%,-50%)";
-      setTimeout(function(){
-        divLeft.style.height = "100%";
-        divRight.style.height = "100%";
-        button.style.display = "block";
-      },1000);
-    });
+ 
     button.addEventListener("click",function(){
       divLeft.style.height = "0px";
       divRight.style.height = "0px";
