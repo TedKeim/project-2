@@ -74,7 +74,7 @@
     text-shadow:0px 0px 10px rgb(0, 3, 155);
   }
   #box{
-    box-shadow:0px 2px 15px #fff;
+    box-shadow:0px 2px 15px rgb(0, 47, 255);
     transform:translate(-550%,-50%);
     position:absolute;
     top:50%;
@@ -82,14 +82,15 @@
     width:300px;
     height:300px;
     z-index:3;
-    color:#fff;
-    text-shadow:0px 0px 25px red;
+    font-weight: bolder;
+    color:rgb(21, 97, 173);
     border-radius:10px;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     transition:.5s all;
+    backdrop-filter: blur(10px);
   }
   #box p{
     font-size:30px;
@@ -108,5 +109,10 @@
     transform:scale(1.5);
     color:red;
   }
-  
+
+  h{
+     color:#ff1302',
+    
+  }
+ 
   

@@ -10,7 +10,14 @@ document.addEventListener("DOMContentLoaded",function(){
     const spanScores = document.querySelector("#scores");
     
 
-    const arrayColor = ["#011C41","#F2E8C3","#F5A219","#F27612","#DA2A04","#FF77A6","#FFC7B2","#A0FEFE","#B6FFBC","#FFBBFF", "#7fff00"];
+    const arrayColor = [ 'rgb(31, 75, 126)',
+      '#ff1302',
+      'rgb(6, 122, 255)',
+      'rgb(255, 17, 17)',
+      'rgba(218, 218, 218, 0.521)',
+      'rgb(255, 255, 255)',
+      'rgb(31, 75, 126)',
+      'rgb(31, 75, 126)']
     var  countDown = 3;
    
     var count = 0;
@@ -23,6 +30,7 @@ document.addEventListener("DOMContentLoaded",function(){
       this.top = -this.radius; 
       this.speedY = 8;
     }
+    
     Ball.prototype.draw = function(ball){
       body.appendChild(ball);
       ball.style.width = ball.style.height = this.radius + "px";
@@ -48,6 +56,14 @@ document.addEventListener("DOMContentLoaded",function(){
        ball.addEventListener("mouseover",function(){
          ball.remove();
          count+=1;
+         if (ball.style.background === 'rgba(218, 218, 218, 0.521)'){
+          spanScores.innerHTML = count + 4;
+          console.log("+5")
+        }
+        if (ball.style.background === '#ff1302'){
+          spanScores.innerHTML = count - 5;
+          console.log("-5")
+        }
        });
     }
   
@@ -57,7 +73,7 @@ document.addEventListener("DOMContentLoaded",function(){
       var ballRand = new Ball(width,height,arrayColor);
       ballRand.draw(ball);  
     }
- 
+    
     button.addEventListener("click",function(){
       divLeft.style.height = "0px";
       divRight.style.height = "0px";
