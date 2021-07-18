@@ -28,7 +28,7 @@
     position:absolute;
     top:50%;
     left:50%;
-    background:#FF3030;
+    background:rgb(21, 97, 173);;
     font-size:30px;
     color:#fff;
     padding:10px 30px;
@@ -39,15 +39,17 @@
     transition:.5s all;
   }
   button:hover{
-    background:#CD2626;
+    background:rgb(21, 97, 173);
+    
   }
   #left, #right{
     position:absolute;
     width:50%;
     height:100%;
-    background:black;
+    background: rgba(31, 75, 126, 0.39);
     z-index:2;
     transition:1s all;
+    backdrop-filter: blur(5px);
   }
   #left{
     left:0;
@@ -68,8 +70,8 @@
     font-size:200px;
     z-index:2;
     transition:.3s all;
-    color:#fff;
-    text-shadow:0px 0px 10px #fff;
+    color:rgb(21, 97, 173);
+    text-shadow:0px 0px 10px rgb(0, 3, 155);
   }
   #box{
     box-shadow:0px 2px 15px #fff;

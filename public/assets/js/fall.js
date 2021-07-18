@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",function(){
     const divCountDown = document.querySelector("#count-down");
     const spanScores = document.querySelector("#scores");
     
-    
+
     const arrayColor = ["#011C41","#F2E8C3","#F5A219","#F27612","#DA2A04","#FF77A6","#FFC7B2","#A0FEFE","#B6FFBC","#FFBBFF", "#7fff00"];
     var  countDown = 3;
    
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded",function(){
       this.radius = Math.floor(Math.random()*100) + 40;
       this.left = Math.floor(Math.random() * (this.width - this.radius)) ;
       this.top = -this.radius; 
-      this.speedY = 3;
+      this.speedY = 8;
     }
     Ball.prototype.draw = function(ball){
       body.appendChild(ball);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",function(){
           }
        },10);
       
-       ball.addEventListener("click",function(){
+       ball.addEventListener("mouseover",function(){
          ball.remove();
          count+=1;
        });
