@@ -3,7 +3,8 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
-// const loader = document.getElementById('loader');
+const button2 = document.querySelector("#restartbtn")
+
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
@@ -37,18 +38,22 @@ function useApiData(data) {
 }
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
+
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
   getNewQuestion();
 }
-  // game.classList.remove('hidden');
+
 getNewQuestion = () => {
   if (availableQuestions.length == 0 || questionCounter >= MAX_QUESTIONS) {
-    localStorage.setItem('mostRecentScore', score);
-    return window.location.assign('/Leaderboard');
+    $(document).ready(function() {
+    $(".modal-body").html("Your score is " + score)
+    $("#myModal").modal();
+    })
   }
+
 
   questionCounter++
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -72,9 +77,7 @@ getNewQuestion = () => {
       acceptingAnswers = false;
       const selectedChoice = e.target;
       const selectedAnswer = selectedChoice.dataset['number'];
-      const classToApply =
-        // eslint-disable-next-line eqeqeq
-        selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+      const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
       incrementScore = (num) => {
         score += num;
         scoreText.innerText = score;
@@ -90,4 +93,15 @@ getNewQuestion = () => {
     });
   });
 
+// document.getElementsByClassName('.restartbtn').addEventListener("click", restart())
+// function restart() {
+//   function startGame() {
+//     return;
+//   }
+//   startGame();
+// }
 
+
+
+ 
+ 
