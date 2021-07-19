@@ -22,20 +22,34 @@ module.exports = function (db) {
         res.json(dbExample);
       });
     },
+    // Get all Leaderboard Scores
+    getLeaderboards: function (req, res) {
+      // console.log('GET HEEEEERRRRREE!!!!!!');
+      db.Leaderboard.findAll({
+        where: { UserId: req.session.passport.user.id }
+      }).then(function (dbLeaderboard) {
+        // console.log('req.body:', req.body);
+        // console.log('DB Leaderboard:', dbLeaderboard);
+        res.json(dbLeaderboard);
+      });
+    },
     // Get all Hangman Scores
     getHangmanScores: function (req, res) {
-      db.Leaderboards.findAll({
+      // console.log('GET HEEEEERRRRREE!!!!!!');
+      db.Leaderboard.findAll({
         where: { game: 'hangman' }
       }).then(function (dbLeaderboard) {
+        // console.log('req.body:', req.body);
+        // console.log('DB Leaderboard:', dbLeaderboard);
         res.json(dbLeaderboard);
       });
     },
     // Create a new Hangman score
     createHangmanScore: function (req, res) {
-      console.log('HEEEEERRRRREE!!!!!!');
+      // console.log('HEEEEERRRRREE!!!!!!');
       db.Leaderboard.create(req.body).then(function (dbLeaderboard) {
-        console.log('req.body:', req.body);
-        console.log('DB Leaderboard:', dbLeaderboard);
+        // console.log('req.body:', req.body);
+        // console.log('DB Leaderboard:', dbLeaderboard);
         res.json(dbLeaderboard);
       });
     }
