@@ -1,0 +1,24 @@
+{{> nav/nav-block}}
+
+
+
+    
+ <link rel="stylesheet" href="/assets/css/fall.css">
+      {{#if isloggedin}}
+    
+	<div class="wrapper">
+	 <div id = "game1"></div>
+
+ </div>
+
+  <script src="/assets/js/Jokesapi.js"></script>
+
+    {{else}}
+    <p>You need to log in to use this app.</p>
+    {{/if}}
+    <h5 id="login-err-msg"></h5>
+  </div>
+
+</div>
+
+{{> modal/login-block}}
