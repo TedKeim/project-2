@@ -83,14 +83,14 @@
     height:300px;
     z-index:3;
     font-weight: bolder;
-    color:rgb(21, 97, 173);
+    color:rgb(255, 255, 255);
     border-radius:10px;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     transition:.5s all;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
   }
   #box p{
     font-size:30px;

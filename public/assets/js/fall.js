@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const spanScores = document.querySelector("#scores");
   const time = document.querySelector(".time");
   const timer = document.querySelector(".timer");
+  const restart = document.querySelector("#restart")
   var seconds = 60;
 
 
@@ -54,7 +55,30 @@ document.addEventListener("DOMContentLoaded", function () {
         ball.remove();
         clearInterval(move);
       }
-    }, 10);
+    }, 5);
+
+
+    //For dificulty intervals
+    //medium
+    // var move = setIntervalMedium(function () {
+    //   var top = parseInt(ball.style.top.substr(0, ball.style.top.length - 2)) + random;
+    //   ball.style.top = top + "px";
+    //   if (top > window.innerHeight) {
+    //     ball.remove();
+    //     clearInterval(move);
+    //   }
+    // }, 20);
+    //hard
+    // var move = setIntervalHard(function () {
+    //   var top = parseInt(ball.style.top.substr(0, ball.style.top.length - 2)) + random;
+    //   ball.style.top = top + "px";
+    //   if (top > window.innerHeight) {
+    //     ball.remove();
+    //     clearInterval(move);
+    //   }
+    // }, 15);
+
+
 
     ball.addEventListener("mouseover", function () {
       ball.remove();
@@ -91,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ballRand.draw(ball);
   }
 
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function  START() {
     divLeft.style.height = "0px";
     divRight.style.height = "0px";
     button.style.display = "none";
@@ -104,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
           divCountDown.style.display = "none";
           clearInterval(runCount);
           count = 0;
-          var startCreateBall = setInterval(createBall, 300);
+          var startCreateBall = setInterval(createBall, 400);
           setTimeout(function () {
             clearInterval(startCreateBall);
             divBox.style.transform = "translate(-50%,-50%)";
@@ -114,4 +138,40 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 1000);
     }, 1000);
   });
+  
+    restart.addEventListener("click", function START() {
+    $(divBox).hide();
+    $(button).show();
+    button.addEventListener("click", function () {
+      divLeft.style.height = "0px";
+      divRight.style.height = "0px";
+      button.style.display = "none";
+      countdown();
+      setTimeout(function () {
+        let runCount = setInterval(function () {
+          divCountDown.innerHTML = countDown;
+          countDown--;
+          if (countDown < 0) {
+            divCountDown.style.display = "none";
+            clearInterval(runCount);
+            count = 0;
+            var startCreateBall = setInterval(createBall, 400);
+            setTimeout(function () {
+              clearInterval(startCreateBall);
+              divBox.style.transform = "translate(-50%,-50%)";
+              spanScores.innerHTML = count;
+            }, 55000);
+          }
+        }, 1000);
+      }, 1000);
+      console.log("started")
+    })
+    
+  
+  })
+  
+    
+
+
+   
 });
